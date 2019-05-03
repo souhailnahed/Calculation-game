@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mental calcul game</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<br><br><br>
+<h1 align="center"> <em><b>Let's See How good you are at Arithmetic Operations</b></em></h1>
+	<center><h3><P>choose the operation and start the game :<br><br></P></h3></center>
+		<table background="images/back2.jpg"; id="table1"; cellpadding="10px"; cellspacing="0px" border="4"; align="center">
+		<CENTER><h2><i><b>Mental Calcul Game</b></i></h2></CENTER>
+			<tr>
+				<th><span id="nbre2"></span></th>
+				<th>
+					<select id="operation">
+						<option value="+" selected="selected">+ (Addition)</option>
+						<option value="-">- (Substration)</option>
+						<option value="x">x (Multiplication)</option>
+						<option value="/">/ (Integer Division)</option>
+					</select>
+				</th>
+				<th><span id="nbre1"></span></th>
+			
+			</tr>
+			<tr>
+				<td>Answer 1 :<button id="choix1" onclick="this.disabled = true;" ;><!--after clicking on the buttion the button will be disabled and we will call the increment function in the js file a window alert message will be displayed -->
+				</button></td>
+				<td>Answer 2 :<button id="choix2" onclick="this.disabled = true;" ;></button></td>
+				<td>Answer 3 :<button id="choix3" onclick="this.disabled = true;" ;></button></td>
+	
+			</tr>
+				<td>Your Score is :<input type="text" disabled="" id="score" value="0" size="4"/></td>
+				<td>
+				<button type="button" id="play" onclick="
+
+					document.getElementById('nbre2').innerHTML = nbre2(); 
+					document.getElementById('nbre1').innerHTML = nbre1();
+					document.getElementById('choix1').innerHTML = operation1(); 
+					document.getElementById('choix2').innerHTML = operation2(); 
+					document.getElementById('choix3').innerHTML = operation3();
+					document.getElementById('choix1').disabled = false;
+					document.getElementById('choix2').disabled = false;
+					document.getElementById('choix3').disabled = false;
+					countandmsg();
+					">PLAY NOW
+			     </button>
+			     <button type="button" id="reset" onclick="resetmsg();">RESET</button>
+			     <!-- after the click button many action s will be  occured 1 the spans with the ids nbre1 and nbre 2 will be generated with a random number from 0 to 100 than the count down function will start after we will calculate the sum or mul or sub or intdiv of the two numbers depending on the operation the operation1 is the right one the others are randomly generated but are not far from the exact number
+			     	after the click the three buttons will be disabled-->
+			   </td>
+				<td>
+					<div id="countdown1">Time is More Valuable Than Money</div><!--Only this div will appear the others are hidden they will be executed in the cases 1- timeout, 2- wrong answer 3- right answer -->
+			        <div id="lost" hidden="">Oups ! You Have Lost ... Try Again </div>
+			        <div id="wintext" hidden="">GREAT Wanna Try Again ?</div>
+			        <div id="timeout" hidden="">10 seconds is already enough You run out of time Try Again  ?</div>
+	
+			</tr>
+		</table>
+
+</body>
+</html>
