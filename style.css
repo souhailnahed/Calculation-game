@@ -1,0 +1,21 @@
+
+table {
+	width: 60%;
+	border-radius: 30px;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+}
+
+}
+
+h1{
+	color: black;
+}
+
+body {
+
+  background-image: url("images/calc1.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 1350px, 750px;
+}
