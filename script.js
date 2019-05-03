@@ -1,6 +1,5 @@
 
-function randomplace() {
-   
+/*   
    var myarray= new Array("choix1","choix2","choix3");//on construit un array et on affecte les 3 id des réponses possible
     var random1 = myarray[Math.floor(Math.random() * myarray.length)]; // we choose a rndom valur of the array and we put it a random1
     var random2 = myarray[Math.floor(Math.random() * myarray.length)];
@@ -12,16 +11,29 @@ function randomplace() {
     }// when we find the values we get out from the loop and we display the values at the div havin the id message(i) with i {1,2,3}
     
     console.log(random1+" "+random2+" "+random3);
-
     document.getElementById("choix1").id=random1;
-    if (choix2!= random1) {
-      document.getElementById("choix2").id=random2;
-    }
-    if (choix3!=random2) {
-       document.getElementById("choix3").id=random3;
+    let random1;
+    document.getElementById("choix2").id=random2;
+    let random2;
+    document.getElementById("choix3").id=random3;
+    let random3;
 }
+*/
+    function shuffle(a) {// permet aux reponses de changer de place, la bonne reponse ne sera pas a la meme place a chaque
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
     }
-   
+    return a;
+    }
+    var random1= operation1()
+    var random2= operation2()
+    var random3= operation3()
+    var result=[random1, random2, random3]
+      var randomedArray=shuffle(result)
+      document.querySelector("#choix1").value=randomedArray[0]
+      document.querySelector("#choix2").value=randomedArray[1]
+      document.querySelector("#choix3").value=randomedArray[2]   
 
 function nbre1() {
 	return b=Math.round( Math.random()*1000 ) ;
@@ -30,8 +42,8 @@ function nbre1() {
 function nbre2() {
 	return a=Math.round( Math.random()*1000 ) ;
 }
-c=Math.round( Math.random()*1000 );
-d=Math.round( Math.random()*1000 );
+var c=Math.round( Math.random()*1000 );
+var d=Math.round( Math.random()*1000 );
 //the 2 previous function take a parametre from the form and ececute the operation and return the value with a random number added to them 
 function add() {
 	return a+b;
